@@ -24,7 +24,7 @@ class VotesController < ApplicationController
             logger.error "Opt out failed for user id: #{ @user.id }"
           end
         else
-          if Time.now > Time.parse(Yetting.contest_start) && Time.now < Time.parse(Yetting.contest_end)
+          if Time.now > Time.parse(Settings.contest_start) && Time.now < Time.parse(Settings.contest_end)
             if incoming_message =~ /^[0-9]{5}/
               @vote = Vote.new
               @vote.user_id
@@ -41,7 +41,7 @@ class VotesController < ApplicationController
               @sms_response = I18n.t 'invalid_code', :thing => 'flavor'
             end
           else
-            @sms_response = I18n.t 'pre_contest_message', :thing => 'flavor', :start_date => 'Oct 16th' # todo: change to formatted yetting date?
+            @sms_response = I18n.t 'pre_contest_message', :thing => 'flavor', :start_date => 'Oct 16th' # todo: change to formatted Settings date?
           end
         end
       end
