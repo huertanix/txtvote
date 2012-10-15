@@ -1,6 +1,6 @@
 txtvote
 =======
-SMS Shortcodes and plain old phone numbers can be used for interacting with your users beyond blasting them messages. This application is a complete example on a working system for this in Rails. It utilizes the Twilio API to handle and record incoming votes while including required flows for shortcodes, utilizing a standard US phone number to handle folks that can't use shortcodes (e.g. some MetroPCS, Verizon, and foreign cell provider customers with US SMS coverage). This demo will be featured and discussed at length at [Twiliocon 2012](http://www.twilio.com/conference). See you in San Francisco!
+SMS Shortcodes and plain old phone numbers can be used for interacting with your users beyond blasting them messages. This application is a complete example on a working system for this in Rails. It utilizes the Twilio API to handle and record incoming votes while including required flows for shortcodes, utilizing a standard US phone number to handle folks that can't use shortcodes (e.g. some MetroPCS, Verizon, and foreign cell provider customers). This demo will be featured and discussed at length at [Twiliocon 2012](http://www.twilio.com/conference). See you in San Francisco!
 
 Usage
 -----

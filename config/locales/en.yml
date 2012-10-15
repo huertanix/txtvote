@@ -7,3 +7,4 @@ en:
   voted: "Thanks for voting! Msg &amp; data rates may apply. Reply HELP for help, STOP to cancel."
   invalid_code: "Invalid %{thing} code. Try again? Msg &amp; data rates may apply. Reply HELP for help, STOP to cancel."
   pre_contest_message: "Vote for best %{thing} on %{start_date}! Msg &amp; data rates may apply. Reply HELP for help, STOP to cancel."
+  post_contest_message: "Thanks for voting, everyone! Winner will be announced soon! Msg &amp; data rates may apply. Reply HELP for help, STOP to cancel."

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121008034435) do
+ActiveRecord::Schema.define(:version => 20121015025333) do
+
+  create_table "things", :force => true do |t|
+    t.string   "description"
+    t.integer  "vote_code",                     :null => false
+    t.boolean  "active",      :default => true
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "things", ["vote_code"], :name => "index_things_on_vote_code"
 
   create_table "users", :force => true do |t|
     t.integer  "phone",      :limit => 15,                    :null => false
