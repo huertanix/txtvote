@@ -30,15 +30,21 @@ class VotesController < ApplicationController
             @sms_response = I18n.t 'pre_contest_message', :thing => 'flavor', :start_date => Time.parse(Settings.contest_start).strftime("%b %d")
           else
             if incoming_message =~ /^[0-9]{5}/
-              @vote = Vote.new
-              @vote.user_id
-              @vote.voted_at = DateTime.now
+              @thing = Thing.find_by_vote_code(incoming_message)
               
-              if @vote.save
-                # render some xml and stuff
-                @sms_response = I18n.t 'voted'
+              if @thing.nil?
+                @sms_response = I18n.t 'invalid_code', :thing => 'flavor'
               else
-                logger.error "Vote failed for user id: #{ @user.id }"
+                @vote = Vote.new
+                @vote.user_id
+                @vote.voted_at = DateTime.now
+                
+                if @vote.save
+                  # render some xml and stuff
+                  @sms_response = I18n.t 'voted'
+                else
+                  logger.error "Vote failed for user id: #{ @user.id }"
+                end
               end
             else
               # invalid
@@ -48,7 +54,7 @@ class VotesController < ApplicationController
         end
       end
       
-      render :template => 'votes/new.xml.erb', :locals => {:sms_response => @sms_response} #:sms_response => @sms_response
+      render :template => 'votes/new.xml.erb', :locals => {:sms_response => @sms_response}
     end
   end
 end
