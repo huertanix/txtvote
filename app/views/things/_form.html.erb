@@ -1,0 +1,27 @@
+<%= form_for(@thing) do |f| %>
+  <% if @thing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@thing.errors.count, "error") %> prohibited this thing from being saved:</h2>
+      <ul>
+      <% @thing.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <b><%= f.label :description, "Description" %></b>
+    <%= f.text_field :description, :value => @thing.description %>
+  </p>
+  <p>
+    <b><%= f.label :vote_code, "Vote Code" %></b>
+    <%= f.text_field :vote_code, :size => 5, :maxlength => 5, :value => @thing.vote_code %>
+  </p>
+  <p>
+    <b><%= f.label :active %></b>
+    <%= f.check_box :active %>
+  </p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
