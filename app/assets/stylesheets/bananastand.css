@@ -1,0 +1,36 @@
+/*
+*= require_self
+*/
+
+body {
+  background-color:#4a4a4a;
+  color:#fff;
+  font-family:Helvetica, Arial, Sans;
+  background: url(/assets/banana_stand_etsy.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+a {
+  color:#fff;
+}
+
+h1 {
+  font-size:52px;
+}
+
+.bananas {
+  list-style:none;
+  width:700px;
+  font-size:32px;
+}
+
+p, .bananas li{
+  color:#fff;
+  background-color:#800000;
+  text-decoration:none;
+  padding:8px;
+  margin-bottom:10px;
+}

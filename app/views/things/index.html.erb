@@ -1,6 +1,11 @@
-<h1>Listing things</h1>
-
-<table>
+<h1>txtvote!</h1>
+<p>text your favorite banana to <del>BNANR (26267)</del> or <b>917-746-5859</b></p>
+<ul class="bananas">
+  <% @things.each do |thing| %>
+    <li><%= thing.description %> - <%= thing.vote_code %></li>
+  <% end %>
+</ul>
+<!--<table>
   <tr>
     <th></th>
     <th></th>
@@ -14,8 +19,5 @@
     <td><%= link_to 'Destroy', thing, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Thing', new_thing_path %>
+</table>-->
+<p>Banana stand papercraft in the background by <a href="http://www.etsy.com/listing/87879362/arrested-development-frozen-banana-stand">Heartless Universe</a></p>
