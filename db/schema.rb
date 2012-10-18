@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(:version => 20121015025333) do
   add_index "things", ["vote_code"], :name => "index_things_on_vote_code"
 
   create_table "users", :force => true do |t|
-    t.integer  "phone",      :limit => 15,                    :null => false
-    t.boolean  "opt_in",                   :default => false
-    t.datetime "created_at",                                  :null => false
-    t.datetime "updated_at",                                  :null => false
+    t.integer  "phone",                         :null => false
+    t.boolean  "opt_in",     :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   add_index "users", ["phone"], :name => "index_users_on_phone"
