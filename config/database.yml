@@ -11,13 +11,14 @@ development:
 test:
   adapter: postgresql
   encoding: utf8
-  database: txtvote_development
+  database: txtvote_test
   pool: 5
   username: huertanix
   
 production:
   adapter: postgresql
   encoding: utf8
-  database: txtvote_development
+  database: <%= Settings.postgres_prod_db %>
   pool: 5
-  username: huertanix
+  username: <%= Settings.postgres_prod_username %>
+  password: <%= Settings.postgres_prod_password %>

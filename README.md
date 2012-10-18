@@ -16,6 +16,9 @@ To begin using this, register an account with [Twilio](https://www.twilio.com) a
       contest_end: '2012-10-19 00:00:00'
       admin_username: 'a cool username'
       admin_password: 'a hard password'
+      postgres_prod_db: 'database name'
+      postgres_prod_username: 'a cool username'
+      postgres_prod_password: 'a hard password'
 
 From there, tweak anything else you want and deploy to the web host of your choice, like Heroku or whatevs the kids are using these days. This is a Rails 3.2 application. If you're new to Rails, check out these fine dox:
 
